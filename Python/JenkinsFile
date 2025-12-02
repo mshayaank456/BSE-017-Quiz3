@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    environment {
+        PYTHON = 'python3.14'
+    }
+
+    stages {
+        
+        stage('Run Application') {
+            steps {
+                script {
+                    bat '''${PYTHON} PythonProgram.py'''
+                }
+            }
+        }
+    }
+}
